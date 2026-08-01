@@ -130,15 +130,3 @@ ul {
   list-style: none;
   margin: 0;
 }
-
-header {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(2.5rem, 2.1479rem + 1.5023vw, 3.5rem);
-}
-
-.logo {
-  min-height: 2.5rem;
-  width: auto;
-}

@@ -1,5 +1,6 @@
 import Logo from "/logo.svg";
 import NavBar from "./NavBar";
+import "../styles/Header.css";
 
 export default function Header() {
   return (
