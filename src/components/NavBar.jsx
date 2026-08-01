@@ -1,12 +1,14 @@
 import { useState } from "react";
 import "../styles/Nav.css";
 
-export default function NavBar() {
+export default function NavBar({ timerDuration, onClick }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   function setIndex(newIndex) {
+    onClick(newIndex);
     setActiveIndex(newIndex);
   }
+
   const tabs = ["pomodoro", "short break", "long break"];
   return (
     <div className="nav-bar">
