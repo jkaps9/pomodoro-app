@@ -26,8 +26,25 @@ export default function Timer({ initialTime }) {
     setIsRunning(false);
   }
 
+  const completionPercentage =
+    ((initialTime - remainingTime) / initialTime) * 100;
+
   return (
     <div id="timer">
+      <svg id="progress-circle">
+        <circle
+          r="48%"
+          cx="50%"
+          cy="50%"
+          fill="transparent"
+          stroke="currentColor"
+          stroke-width="0.5rem"
+          pathLength="100"
+          strokeDasharray={`${100 - completionPercentage}, 
+          ${completionPercentage}`}
+          strokeLinecap="round"
+        ></circle>
+      </svg>
       <div className="timer__content">
         <p className="time">
           <span id="minutes">

@@ -7,6 +7,18 @@
   min-height: clamp(18.75rem, 16.3292rem + 10.3286vw, 25.625rem);
   min-width: clamp(18.75rem, 16.3292rem + 10.3286vw, 25.625rem);
   position: relative;
+  z-index: 1;
+}
+
+#progress-circle {
+  color: var(--color-accent);
+  position: absolute;
+  height: 85%;
+  inset: 0;
+  margin: auto;
+  transform: rotate(-90deg);
+  width: 85%;
+  z-index: 3;
 }
 
 #timer::before {
@@ -27,7 +39,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  z-index: 3;
+  z-index: 4;
 
   button {
     letter-spacing: 15px;
