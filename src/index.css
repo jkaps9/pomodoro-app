@@ -65,6 +65,8 @@
   --font-serif: "Roboto Slab", serif;
   --font-mono: "Space Mono", ui-monospace, Consolas, monospace;
 
+  --font: var(--font-sans);
+
   color: var(--color-text-body);
   background: var(--color-bg);
   font-synthesis: none;
@@ -85,9 +87,21 @@
   --color-accent: var(--colors-purple-400);
 }
 
+:root[data-font="sans"] {
+  --font: var(--font-sans);
+}
+
+:root[data-font="serif"] {
+  --font: var(--font-serif);
+}
+
+:root[data-font="mono"] {
+  --font: var(--font-mono);
+}
+
 body {
   color: var(--color-body-text);
-  font-family: var(--font-sans);
+  font-family: var(--font);
   font-size: 1rem;
   font-weight: 700;
   margin: 0;

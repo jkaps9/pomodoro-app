@@ -14,8 +14,23 @@
         }
       };
 
+      const getFontPreference = () => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("font")
+        ) {
+          return localStorage.getItem("font");
+        } else {
+          localStorage.setItem("font", "sans");
+          return "sans";
+        }
+      };
+
       const themePreference = getThemePreference();
       document.documentElement.setAttribute("data-theme", themePreference);
+
+      const fontPreference = getFontPreference();
+      document.documentElement.setAttribute("data-font", fontPreference);
     </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
