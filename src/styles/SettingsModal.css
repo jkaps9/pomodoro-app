@@ -13,3 +13,11 @@ label {
     flex-direction: column;
   }
 }
+
+button[type="submit"] {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  opacity: 1;
+  min-width: 140px;
+  width: unset;
+}

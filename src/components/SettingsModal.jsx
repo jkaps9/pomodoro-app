@@ -40,6 +40,10 @@ export default function SettingsModal({ isVisible, preferences }) {
               </div>
             </div>
           </section>
+
+          <button type="submit" className="btn">
+            Apply
+          </button>
         </main>
       </form>
     </div>
