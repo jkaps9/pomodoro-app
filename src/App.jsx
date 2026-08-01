@@ -9,7 +9,7 @@ export default function App() {
       <Header></Header>
       <main>
         <section>
-          <Timer></Timer>
+          <Timer initialTime={20 * 60}></Timer>
         </section>
       </main>
       <Footer></Footer>
