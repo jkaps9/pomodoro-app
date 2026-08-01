@@ -85,13 +85,12 @@ body {
 
 #root {
   align-items: stretch;
-  border-inline: 1px solid var(--color-border);
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   max-width: 330px;
   min-height: 100svh;
+  padding-block-start: 2rem;
   text-align: center;
 }
 
@@ -129,4 +128,17 @@ p {
 ul {
   list-style: none;
   margin: 0;
+}
+
+@media (min-width: 768px) {
+  #root {
+    max-width: 380px;
+    padding-block-start: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #root {
+    padding-block-start: 3rem;
+  }
 }
