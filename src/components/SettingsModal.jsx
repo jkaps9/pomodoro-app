@@ -15,8 +15,9 @@ export default function SettingsModal({ isVisible, preferences, onChange }) {
               <input
                 type="number"
                 id="pomodoro-time"
-                name="pomodoro-time"
+                name="pomodoroTime"
                 value={preferences.pomodoroTime}
+                onChange={onChange}
               />
             </div>
             <div>
@@ -24,8 +25,9 @@ export default function SettingsModal({ isVisible, preferences, onChange }) {
               <input
                 type="number"
                 id="short-break-time"
-                name="short-break-time"
+                name="shortBreakTime"
                 value={preferences.shortBreakTime}
+                onChange={onChange}
               />
             </div>
             <div>
@@ -33,8 +35,9 @@ export default function SettingsModal({ isVisible, preferences, onChange }) {
               <input
                 type="number"
                 id="long-break-time"
-                name="long-break-time"
+                name="longBreakTime"
                 value={preferences.longBreakTime}
+                onChange={onChange}
               />
             </div>
           </div>

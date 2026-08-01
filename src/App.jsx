@@ -13,13 +13,16 @@ const DEFAULT_PREFERENCES = {
 };
 
 export default function App() {
-  const [timerDuration, setTimerDuration] = useState(20 * 60);
   const [preferences, setPreferences] = useState(() => {
     const savedPreferences = localStorage.getItem("app-preferences");
     return savedPreferences
       ? JSON.parse(savedPreferences)
       : DEFAULT_PREFERENCES;
   });
+
+  const [timerDuration, setTimerDuration] = useState(
+    preferences["pomodoroTime"] * 60,
+  );
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", preferences.color);
@@ -29,17 +32,17 @@ export default function App() {
   }, [preferences]);
 
   const handlePreferenceChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type } = e.target;
+    const parsedValue = type === "number" ? Number(value) : value;
+
     setPreferences((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: parsedValue,
     }));
   };
 
-  const durations = [20, 5, 15];
-
   function setDuration(newIndex) {
-    setTimerDuration(durations[newIndex] * 60);
+    setTimerDuration(preferences[newIndex] * 60);
   }
 
   return (
