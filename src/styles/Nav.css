@@ -2,6 +2,9 @@
   align-self: stretch;
   background-color: var(--color-bg-surface);
   border-radius: 2rem;
+  margin-inline: auto;
+  max-width: 330px;
+  width: 100%;
 }
 
 .tab-list {
