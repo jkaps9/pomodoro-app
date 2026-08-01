@@ -60,9 +60,6 @@
   --color-accent: var(--colors-red-400);
 
   --color-border: #e5e4e7;
-  --color-accent-bg: rgba(170, 59, 255, 0.1);
-  --color-accent-border: rgba(170, 59, 255, 0.5);
-  --color-social-bg: rgba(244, 243, 236, 0.5);
 
   --font-sans: "Kumbh Sans", system-ui, "Segoe UI", Roboto, sans-serif;
   --font-serif: "Roboto Slab", serif;
