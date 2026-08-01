@@ -34,6 +34,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  padding: 0;
 }
 
 :root {
@@ -52,10 +53,13 @@
 
   --color-text-body: var(--colors-blue-100);
   --color-text-headings: var(--colors-blue-100);
-  --color-bg: var(--colors-blue-850);
-  --color-border: #e5e4e7;
+  --color-text-dark: var(--colors-blue-850);
 
-  --color-accent: #aa3bff;
+  --color-bg: var(--colors-blue-850);
+  --color-bg-surface: var(--colors-blue-900);
+  --color-accent: var(--colors-red-400);
+
+  --color-border: #e5e4e7;
   --color-accent-bg: rgba(170, 59, 255, 0.1);
   --color-accent-border: rgba(170, 59, 255, 0.5);
   --color-social-bg: rgba(244, 243, 236, 0.5);
@@ -63,11 +67,11 @@
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --font-sans: "Kumb Sans", system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Kumbh Sans", system-ui, "Segoe UI", Roboto, sans-serif;
   --font-serif: "Roboto Slab", serif;
   --font-mono: "Space Mono", ui-monospace, Consolas, monospace;
 
-  color: var(--color-text);
+  color: var(--color-text-body);
   background: var(--color-bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -80,15 +84,15 @@ body {
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
+  align-items: stretch;
   border-inline: 1px solid var(--color-border);
-  min-height: 100svh;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 330px;
+  min-height: 100svh;
+  text-align: center;
 }
 
 h1,
@@ -120,4 +124,21 @@ h2 {
 
 p {
   margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 2.1479rem + 1.5023vw, 3.5rem);
+}
+
+.logo {
+  min-height: 2.5rem;
+  width: auto;
 }

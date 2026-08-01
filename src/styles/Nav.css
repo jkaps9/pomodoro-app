@@ -1,0 +1,36 @@
+.nav-bar {
+  align-self: stretch;
+  background-color: var(--color-bg-surface);
+  border-radius: 2rem;
+}
+
+.tab-list {
+  display: flex;
+  padding: 0.5rem 0.75rem;
+}
+
+li {
+  flex: 1;
+}
+
+.btn {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  border-radius: 1.5rem;
+  color: var(--color-text-body);
+  display: flex;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.2;
+  min-height: 3rem;
+  opacity: 0.4;
+  width: 100%;
+}
+
+.btn.active {
+  background-color: var(--color-accent);
+  color: var(--color-text-dark);
+  opacity: 1;
+}
