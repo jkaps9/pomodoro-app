@@ -42,70 +42,80 @@ export default function SettingsModal({ isVisible, preferences }) {
         <section>
           <fieldset className="option-group">
             <legend className="section__title">Font</legend>
-            <div className="option">
-              <label htmlFor="font-sans"></label>
-              <input
-                type="radio"
-                id="font-sans"
-                name="theme-font"
-                value="sans"
-                checked={preferences.font === "sans"}
-              />
-            </div>
-            <div className="option">
-              <label htmlFor="font-serif"></label>
-              <input
-                type="radio"
-                id="font-serif"
-                name="theme-font"
-                value="serif"
-                checked={preferences.font === "serif"}
-              />
-            </div>
-            <div className="option">
-              <label htmlFor="font-mono"></label>
-              <input
-                type="radio"
-                id="font-mono"
-                name="theme-font"
-                value="mono"
-                checked={preferences.font === "mono"}
-              />
+            <div className="options">
+              <div className="option">
+                <label htmlFor="font-sans" className="font-sans">
+                  Aa
+                </label>
+                <input
+                  type="radio"
+                  id="font-sans"
+                  name="theme-font"
+                  value="sans"
+                  checked={preferences.font === "sans"}
+                />
+              </div>
+              <div className="option">
+                <label htmlFor="font-serif" className="font-serif">
+                  Aa
+                </label>
+                <input
+                  type="radio"
+                  id="font-serif"
+                  name="theme-font"
+                  value="serif"
+                  checked={preferences.font === "serif"}
+                />
+              </div>
+              <div className="option">
+                <label htmlFor="font-mono" className="font-mono">
+                  Aa
+                </label>
+                <input
+                  type="radio"
+                  id="font-mono"
+                  name="theme-font"
+                  value="mono"
+                  checked={preferences.font === "mono"}
+                />
+              </div>
             </div>
           </fieldset>
         </section>
         <section>
           <fieldset className="option-group">
             <legend className="section__title">Color</legend>
-            <div className="option">
-              <label htmlFor="color-red"></label>
-              <input
-                type="radio"
-                id="color-red"
-                name="theme-color"
-                value="red"
-                checked={preferences.color === "red"}
-              />
-            </div>
-            <div className="option">
-              <label htmlFor="color-cyan"></label>
-              <input
-                type="radio"
-                id="color-cyan"
-                name="theme-color"
-                value="cyan"
-                checked={preferences.color === "cyan"}
-              />
-            </div>
-            <div className="option">
-              <label htmlFor="color-purple"></label>
-              <input
-                type="radio"
-                id="color-purple"
-                name="theme-color"
-                value="purple"
-                checked={preferences.color === "purple"}
-              />
+            <div className="options">
+              <div className="option">
+                <label htmlFor="color-red" className="bg-red"></label>
+                <input
+                  type="radio"
+                  id="color-red"
+                  name="theme-color"
+                  value="red"
+                  checked={preferences.color === "red"}
+                />
+              </div>
+              <div className="option">
+                <label htmlFor="color-cyan" className="bg-cyan"></label>
+                <input
+                  type="radio"
+                  id="color-cyan"
+                  name="theme-color"
+                  value="cyan"
+                  checked={preferences.color === "cyan"}
+                />
+              </div>
+              <div className="option">
+                <label htmlFor="color-purple" className="bg-purple"></label>
+                <input
+                  type="radio"
+                  id="color-purple"
+                  name="theme-color"
+                  value="purple"
+                  checked={preferences.color === "purple"}
+                />
+              </div>
             </div>
           </fieldset>
         </section>

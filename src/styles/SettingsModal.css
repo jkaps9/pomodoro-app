@@ -20,28 +20,88 @@ form {
     letter-spacing: 4px;
   }
 
-  label,
-  input {
-    font-family: inherit;
-    font-weight: inherit;
+  fieldset {
+    border: none;
   }
 
-  label {
-    color: var(--color-text-dark);
-    font-size: 0.75rem;
-    text-transform: lowercase;
-    opacity: 0.4;
+  .option-group input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
   }
 
-  input {
-    min-height: 40px;
-    max-width: 140px;
+  .options {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .option > label {
+    align-items: center;
+    border-radius: 100vh;
+    cursor: pointer;
+    display: inline-flex;
+    height: 2.5rem;
+    justify-content: center;
+    width: 2.5rem;
+  }
+
+  .option > label[class^="font-"] {
+    background-color: var(--color-blue-50);
+  }
+
+  .option > label[class^="font-"] {
+    background-color: var(--color-blue-50);
+  }
+
+  .bg-red {
+    background-color: var(--color-red-400);
+  }
+
+  .bg-cyan {
+    background-color: var(--color-cyan-300);
+  }
+
+  .bg-purple {
+    background-color: var(--color-purple-400);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
   }
 
   .input-group {
     align-items: center;
     display: flex;
     flex-direction: column;
+
+    label,
+    input {
+      font-family: inherit;
+      font-weight: inherit;
+    }
+
+    label {
+      color: var(--color-text-dark);
+      font-size: 0.75rem;
+      text-transform: lowercase;
+      opacity: 0.4;
+    }
+
+    input {
+      min-height: 2.5rem;
+      max-width: 140px;
+    }
 
     * {
       align-items: center;

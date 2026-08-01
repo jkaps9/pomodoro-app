@@ -14,6 +14,8 @@ export default function App() {
       shortBreak: durations[1],
       longBreak: durations[2],
     },
+    font: "sans",
+    color: "red",
   };
 
   function setDuration(newIndex) {
