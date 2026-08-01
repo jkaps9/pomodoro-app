@@ -4,10 +4,15 @@
   color: var(--color-blue-900);
   display: none;
   min-width: clamp(20.625rem, 16.0035rem + 19.7183vw, 33.75rem);
+}
 
-  .active {
-    display: flex;
-  }
+.settings-modal.active {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
 }
 
 form {
