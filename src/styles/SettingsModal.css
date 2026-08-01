@@ -13,17 +13,16 @@ form {
   font-family: var(--font-sans);
   padding-block: 1rem;
   header {
-    align-items: flex-start;
+    align-items: center;
     border-bottom: 1px solid var(--color-grey-200);
     display: flex;
     justify-content: space-between;
+    padding-inline: 1.5rem;
     padding-bottom: 1rem;
+
     h2 {
       font-size: 1.75rem;
       line-height: 1.25;
-    }
-    * {
-      padding-inline: 1.5rem;
     }
   }
 

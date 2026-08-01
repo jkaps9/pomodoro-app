@@ -5,7 +5,7 @@ import "../styles/Header.css";
 export default function Header({ onClick }) {
   return (
     <>
-      <header>
+      <header id="header">
         <img src={Logo} alt="Pomodoro site logo" className="logo" />
         <NavBar onClick={onClick}></NavBar>
       </header>

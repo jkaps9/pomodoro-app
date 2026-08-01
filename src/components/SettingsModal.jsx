@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/SettingsModal.css";
+import iconClose from "/icon-close.svg";
 
 export default function SettingsModal({
   isVisible,
@@ -61,6 +62,9 @@ export default function SettingsModal({
       <form onSubmit={handleSubmit}>
         <header>
           <h2>Settings</h2>
+          <button>
+            <img src={iconClose} alt="" />
+          </button>
         </header>
         <main>
           <section>
