@@ -1,0 +1,15 @@
+label {
+  display: block;
+  text-transform: lowercase;
+}
+
+.form-row {
+  align-items: center;
+  display: flex;
+
+  * {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+  }
+}
