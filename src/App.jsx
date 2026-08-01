@@ -20,9 +20,7 @@ export default function App() {
       : DEFAULT_PREFERENCES;
   });
 
-  const [timerDuration, setTimerDuration] = useState(
-    preferences["pomodoroTime"] * 60,
-  );
+  const [currentTimer, setCurrentTimer] = useState("pomodoroTime");
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", preferences.color);
@@ -35,16 +33,19 @@ export default function App() {
     setPreferences(newPreferences);
   };
 
-  function setDuration(newIndex) {
-    setTimerDuration(preferences[newIndex] * 60);
+  function setTimer(newIndex) {
+    setCurrentTimer(newIndex);
   }
 
   return (
     <>
-      <Header onClick={setDuration}></Header>
+      <Header onClick={setTimer}></Header>
       <main>
         <section>
-          <Timer key={timerDuration} initialTime={timerDuration}></Timer>
+          <Timer
+            key={preferences[currentTimer]}
+            initialTime={preferences[currentTimer]}
+          ></Timer>
         </section>
         <section>
           <SettingsButton></SettingsButton>

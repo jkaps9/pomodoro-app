@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "../styles/Timer.css";
 
 export default function Timer({ initialTime }) {
-  const [remainingTime, setTime] = useState(initialTime);
+  const [remainingTime, setTime] = useState(initialTime * 60);
   const [isRunning, setIsRunning] = useState(false);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function Timer({ initialTime }) {
   }
 
   const completionPercentage =
-    ((initialTime - remainingTime) / initialTime) * 100;
+    ((initialTime - remainingTime / 60) / initialTime) * 100;
 
   return (
     <div id="timer">
