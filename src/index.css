@@ -4,7 +4,7 @@
   font-family: "Kumbh Sans";
   font-style: normal;
   font-weight: 700;
-  src: url("../assets/fonts/kumbh-sans-v27-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("./assets/fonts/kumbh-sans-v27-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* roboto-slab-700 - latin */
 @font-face {
@@ -12,7 +12,7 @@
   font-family: "Roboto Slab";
   font-style: normal;
   font-weight: 700;
-  src: url("../assets/fonts/roboto-slab-v36-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("./assets/fonts/roboto-slab-v36-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* space-mono-regular - latin */
 @font-face {
@@ -20,7 +20,7 @@
   font-family: "Space Mono";
   font-style: normal;
   font-weight: 400;
-  src: url("../assets/fonts/space-mono-v17-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("./assets/fonts/space-mono-v17-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* space-mono-700 - latin */
 @font-face {
@@ -28,7 +28,7 @@
   font-family: "Space Mono";
   font-style: normal;
   font-weight: 700;
-  src: url("../assets/fonts/space-mono-v17-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("./assets/fonts/space-mono-v17-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 *,
 *::before,
@@ -65,8 +65,6 @@
   --font-serif: "Roboto Slab", serif;
   --font-mono: "Space Mono", ui-monospace, Consolas, monospace;
 
-  --font: var(--font-sans);
-
   color: var(--color-text-body);
   background: var(--color-bg);
   font-synthesis: none;
@@ -75,33 +73,32 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-:root[data-theme="red"] {
+[data-theme="red"] {
   --color-accent: var(--color-red-400);
 }
 
-:root[data-theme="cyan"] {
+[data-theme="cyan"] {
   --color-accent: var(--color-cyan-300);
 }
 
-:root[data-theme="purple"] {
+[data-theme="purple"] {
   --color-accent: var(--color-purple-400);
 }
 
-:root[data-font="sans"] {
-  --font: var(--font-sans);
+[data-font="sans"] {
+  font-family: var(--font-sans);
 }
 
-:root[data-font="serif"] {
-  --font: var(--font-serif);
+[data-font="serif"] {
+  font-family: var(--font-serif);
 }
 
-:root[data-font="mono"] {
-  --font: var(--font-mono);
+[data-font="mono"] {
+  font-family: var(--font-mono);
 }
 
 body {
   color: var(--color-body-text);
-  font-family: var(--font);
   font-size: 1rem;
   font-weight: 700;
   margin: 0;

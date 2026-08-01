@@ -15,13 +15,16 @@ const DEFAULT_PREFERENCES = {
 export default function App() {
   const [timerDuration, setTimerDuration] = useState(20 * 60);
   const [preferences, setPreferences] = useState(() => {
-    const savedPreferences = localStorage.getItem("preferences");
+    const savedPreferences = localStorage.getItem("app-preferences");
     return savedPreferences
       ? JSON.parse(savedPreferences)
       : DEFAULT_PREFERENCES;
   });
 
   useEffect(() => {
+    document.documentElement.setAttribute("data-theme", preferences.color);
+    document.documentElement.setAttribute("data-font", preferences.font);
+
     localStorage.setItem("app-preferences", JSON.stringify(preferences));
   }, [preferences]);
 

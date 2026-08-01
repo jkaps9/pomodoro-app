@@ -2,35 +2,26 @@
 <html lang="en">
   <head>
     <script>
-      const getThemePreference = () => {
+      const getAppPreference = () => {
         if (
           typeof localStorage !== "undefined" &&
-          localStorage.getItem("theme")
+          localStorage.getItem("app-preferences")
         ) {
-          return localStorage.getItem("theme");
+          return JSON.stringify(localStorage.getItem("app-preferences"));
         } else {
-          localStorage.setItem("theme", "red");
-          return "red";
+          return {
+            pomodoroTime: 25,
+            shortBreakTime: 5,
+            longBreakTime: 15,
+            font: "sans",
+            color: "red",
+          };
         }
       };
 
-      const getFontPreference = () => {
-        if (
-          typeof localStorage !== "undefined" &&
-          localStorage.getItem("font")
-        ) {
-          return localStorage.getItem("font");
-        } else {
-          localStorage.setItem("font", "sans");
-          return "sans";
-        }
-      };
-
-      const themePreference = getThemePreference();
-      document.documentElement.setAttribute("data-theme", themePreference);
-
-      const fontPreference = getFontPreference();
-      document.documentElement.setAttribute("data-font", fontPreference);
+      const appPreference = getAppPreference();
+      document.documentElement.setAttribute("data-theme", appPreference.color);
+      document.documentElement.setAttribute("data-font", appPreference.font);
     </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

@@ -52,3 +52,9 @@
   letter-spacing: -5px;
   max-width: 50%;
 }
+
+[data-font="mono"] {
+  .time {
+    font-weight: 400;
+  }
+}
