@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/Nav.css";
 
-export default function NavBar({ timerDuration, onClick }) {
+export default function NavBar({ onClick }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   function setIndex(newIndex) {

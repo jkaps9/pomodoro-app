@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <>
-      <Header timerDuration={timerDuration} onClick={setDuration}></Header>
+      <Header onClick={setDuration}></Header>
       <main>
         <section>
           <Timer key={timerDuration} initialTime={timerDuration}></Timer>
