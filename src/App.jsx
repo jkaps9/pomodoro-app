@@ -40,7 +40,7 @@ export default function App() {
   return (
     <>
       <Header onClick={setTimer}></Header>
-      <main>
+      <main id="main">
         <section>
           <Timer
             key={preferences[currentTimer]}
