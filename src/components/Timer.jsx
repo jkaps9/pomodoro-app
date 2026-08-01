@@ -33,11 +33,8 @@ export default function Timer() {
           {(remainingTime % 60).toString().padStart(2, "0")}
         </span>
       </p>
-      <button
-        className="btn--pause"
-        onClick={() => setIsRunning((prev) => !prev)}
-      >
-        Pause
+      <button onClick={() => setIsRunning((prev) => !prev)}>
+        {remainingTime === 0 ? "RESTART" : isRunning ? "PAUSE" : "START"}
       </button>
     </div>
   );
