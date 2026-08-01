@@ -1,14 +1,21 @@
 import { useState, useEffect } from "react";
 
 export default function Timer() {
-  const [remainingTime, setTime] = useState(0);
+  const [remainingTime, setTime] = useState(120);
   const [isRunning, setIsRunning] = useState(false);
 
   useEffect(() => {
     if (!isRunning) return;
+
     const intervalId = setInterval(() => {
-      setTime((prev) => prev - 1);
-    }, 1000);
+      setTime((prev) => {
+        if (prev === 0) {
+          setIsRunning(false);
+          return prev;
+        }
+        return prev - 1;
+      });
+    }, 10);
 
     return () => clearInterval(intervalId);
   }, [isRunning]);
@@ -16,8 +23,15 @@ export default function Timer() {
   return (
     <div>
       <p className="time">
-        <span id="minutes">{Math.floor(remainingTime / 60)}</span>:
-        <span id="seconds">{remainingTime % 60}</span>
+        <span id="minutes">
+          {Math.floor(remainingTime / 60)
+            .toString()
+            .padStart(2, "0")}
+        </span>
+        :
+        <span id="seconds">
+          {(remainingTime % 60).toString().padStart(2, "0")}
+        </span>
       </p>
       <button
         className="btn--pause"
