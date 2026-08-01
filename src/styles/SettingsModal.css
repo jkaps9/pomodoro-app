@@ -93,6 +93,7 @@ form {
     align-items: center;
     display: flex;
     flex-direction: column;
+    gap: clamp(0.5rem, 0.1479rem + 1.5023vw, 1.5rem);
 
     label,
     input {
@@ -108,8 +109,11 @@ form {
     }
 
     input {
-      min-height: 2.5rem;
+      background-color: var(--color-blue-50);
+      border: none;
+      border-radius: 10px;
       max-width: 140px;
+      padding: 1rem;
     }
 
     * {
@@ -136,6 +140,16 @@ form {
       * {
         align-items: flex-start;
         flex-direction: column;
+      }
+    }
+
+    fieldset {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+
+      legend {
+        display: contents;
       }
     }
   }
