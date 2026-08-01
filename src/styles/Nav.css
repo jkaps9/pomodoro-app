@@ -21,7 +21,6 @@ li {
   background-color: transparent;
   border: none;
   border-radius: 1.5rem;
-  color: var(--color-text-body);
   display: flex;
   font-family: var(--font-sans);
   font-weight: 700;
