@@ -1,8 +1,24 @@
 #timer {
   align-items: center;
-  border-radius: 150px;
+  background: var(--color-gradient);
+  border-radius: 100vh;
   display: flex;
   justify-content: center;
+  min-height: clamp(18.75rem, 16.3292rem + 10.3286vw, 25.625rem);
+  min-width: clamp(18.75rem, 16.3292rem + 10.3286vw, 25.625rem);
+  position: relative;
+}
+
+#timer::before {
+  background: var(--color-bg-surface);
+  border-radius: 100vh;
+  content: "";
+  position: absolute;
+  height: 90%;
+  inset: 0;
+  margin: auto;
+  width: 90%;
+  z-index: 2;
 }
 
 .timer__content {
@@ -10,15 +26,16 @@
   border-radius: 150px;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 3;
   p {
     font-size: clamp(5rem, 4.5599rem + 1.8779vw, 6.25rem);
-    font-weight: 700;
     line-height: 1.25;
     letter-spacing: -5px;
+    max-width: 50%;
   }
 
   button {
-    font-weight: 700;
     letter-spacing: 15px;
   }
 }
