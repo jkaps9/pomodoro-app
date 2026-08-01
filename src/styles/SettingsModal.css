@@ -46,6 +46,7 @@ form {
       display: inline-flex;
       height: 2.5rem;
       justify-content: center;
+      position: relative;
       width: 2.5rem;
     }
     label[class^="font-"] {
@@ -55,6 +56,12 @@ form {
     input[type="radio"]:checked + label[class^="font-"] {
       background-color: var(--color-bg-surface);
       color: var(--color-white);
+    }
+
+    input[type="radio"]:checked + label[class^="bg-"] {
+      background-image: url("/checkmark.svg");
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
 
