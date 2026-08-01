@@ -1,7 +1,6 @@
 import Header from "./components/Header";
 import SettingsButton from "./components/SettingsButton";
 import Timer from "./components/Timer";
-import "./App.css";
 
 export default function App() {
   return (
