@@ -1,6 +1,6 @@
 import "../styles/SettingsModal.css";
 
-export default function SettingsModal({ isVisible, preferences }) {
+export default function SettingsModal({ isVisible, preferences, onChange }) {
   return (
     <div className={`settings-modal ${isVisible ? "active" : ""}`}>
       <form action="">
@@ -16,7 +16,7 @@ export default function SettingsModal({ isVisible, preferences }) {
                 type="number"
                 id="pomodoro-time"
                 name="pomodoro-time"
-                value={preferences.times.pomodoro}
+                value={preferences.pomodoroTime}
               />
             </div>
             <div>
@@ -25,7 +25,7 @@ export default function SettingsModal({ isVisible, preferences }) {
                 type="number"
                 id="short-break-time"
                 name="short-break-time"
-                value={preferences.times.shortBreak}
+                value={preferences.shortBreakTime}
               />
             </div>
             <div>
@@ -34,7 +34,7 @@ export default function SettingsModal({ isVisible, preferences }) {
                 type="number"
                 id="long-break-time"
                 name="long-break-time"
-                value={preferences.times.longBreak}
+                value={preferences.longBreakTime}
               />
             </div>
           </div>
@@ -47,9 +47,10 @@ export default function SettingsModal({ isVisible, preferences }) {
                 <input
                   type="radio"
                   id="font-sans"
-                  name="theme-font"
+                  name="font"
                   value="sans"
                   checked={preferences.font === "sans"}
+                  onChange={onChange}
                 />
                 <label htmlFor="font-sans" className="font-sans">
                   Aa
@@ -59,9 +60,10 @@ export default function SettingsModal({ isVisible, preferences }) {
                 <input
                   type="radio"
                   id="font-serif"
-                  name="theme-font"
+                  name="font"
                   value="serif"
                   checked={preferences.font === "serif"}
+                  onChange={onChange}
                 />
                 <label htmlFor="font-serif" className="font-serif">
                   Aa
@@ -71,9 +73,10 @@ export default function SettingsModal({ isVisible, preferences }) {
                 <input
                   type="radio"
                   id="font-mono"
-                  name="theme-font"
+                  name="font"
                   value="mono"
                   checked={preferences.font === "mono"}
+                  onChange={onChange}
                 />
                 <label htmlFor="font-mono" className="font-mono">
                   Aa
@@ -90,9 +93,10 @@ export default function SettingsModal({ isVisible, preferences }) {
                 <input
                   type="radio"
                   id="color-red"
-                  name="theme-color"
+                  name="color"
                   value="red"
                   checked={preferences.color === "red"}
+                  onChange={onChange}
                 />
                 <label htmlFor="color-red" className="bg-red"></label>
               </div>
@@ -100,9 +104,10 @@ export default function SettingsModal({ isVisible, preferences }) {
                 <input
                   type="radio"
                   id="color-cyan"
-                  name="theme-color"
+                  name="color"
                   value="cyan"
                   checked={preferences.color === "cyan"}
+                  onChange={onChange}
                 />
                 <label htmlFor="color-cyan" className="bg-cyan"></label>
               </div>
@@ -110,9 +115,10 @@ export default function SettingsModal({ isVisible, preferences }) {
                 <input
                   type="radio"
                   id="color-purple"
-                  name="theme-color"
+                  name="color"
                   value="purple"
                   checked={preferences.color === "purple"}
+                  onChange={onChange}
                 />
                 <label htmlFor="color-purple" className="bg-purple"></label>
               </div>
