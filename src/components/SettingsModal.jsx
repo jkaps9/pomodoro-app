@@ -55,7 +55,10 @@ export default function SettingsModal({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validateForm()) onApply(draftPreferences);
+    if (validateForm()) {
+      onApply(draftPreferences);
+      onCloseClick();
+    }
   };
 
   return (
@@ -63,7 +66,7 @@ export default function SettingsModal({
       <form onSubmit={handleSubmit}>
         <header>
           <h2>Settings</h2>
-          <button>
+          <button onClick={onCloseClick}>
             <img src={iconClose} alt="" />
           </button>
         </header>
@@ -198,7 +201,7 @@ export default function SettingsModal({
               </div>
             </fieldset>
           </section>
-          <button type="submit" className="btn" onClick={onCloseClick}>
+          <button type="submit" className="btn">
             Apply
           </button>
         </main>
