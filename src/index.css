@@ -96,6 +96,14 @@ body {
   text-align: center;
 }
 
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4rem, 5.3521rem + -1.5023vw, 5rem);
+  width: 100%;
+}
+
 h1,
 h2 {
   font-family: var(--font-sans);
