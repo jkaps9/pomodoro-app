@@ -74,6 +74,41 @@ export default function SettingsModal({ isVisible, preferences }) {
             </div>
           </fieldset>
         </section>
+        <section>
+          <fieldset className="option-group">
+            <legend className="section__title">Color</legend>
+            <div className="option">
+              <label htmlFor="color-red"></label>
+              <input
+                type="radio"
+                id="color-red"
+                name="theme-color"
+                value="red"
+                checked={preferences.color === "red"}
+              />
+            </div>
+            <div className="option">
+              <label htmlFor="color-cyan"></label>
+              <input
+                type="radio"
+                id="color-cyan"
+                name="theme-color"
+                value="cyan"
+                checked={preferences.color === "cyan"}
+              />
+            </div>
+            <div className="option">
+              <label htmlFor="color-purple"></label>
+              <input
+                type="radio"
+                id="color-purple"
+                name="theme-color"
+                value="purple"
+                checked={preferences.color === "purple"}
+              />
+            </div>
+          </fieldset>
+        </section>
         <button type="submit" className="btn">
           Apply
         </button>
