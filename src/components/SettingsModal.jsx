@@ -1,9 +1,31 @@
+import { useState } from "react";
 import "../styles/SettingsModal.css";
 
-export default function SettingsModal({ isVisible, preferences, onChange }) {
+export default function SettingsModal({
+  isVisible,
+  currentPreferences,
+  onApply,
+}) {
+  const [draftPreferences, setDraftPreferences] = useState(currentPreferences);
+
+  const handleChange = (e) => {
+    const { name, value, type } = e.target;
+    const parsedValue = type === "number" ? Number(value) : value;
+
+    setDraftPreferences((prev) => ({
+      ...prev,
+      [name]: parsedValue,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onApply(draftPreferences);
+  };
+
   return (
     <div className={`settings-modal ${isVisible ? "active" : ""}`}>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <header>
           <h2>Settings</h2>
         </header>
@@ -16,8 +38,8 @@ export default function SettingsModal({ isVisible, preferences, onChange }) {
                 type="number"
                 id="pomodoro-time"
                 name="pomodoroTime"
-                value={preferences.pomodoroTime}
-                onChange={onChange}
+                value={draftPreferences.pomodoroTime}
+                onChange={handleChange}
               />
             </div>
             <div>
@@ -26,8 +48,8 @@ export default function SettingsModal({ isVisible, preferences, onChange }) {
                 type="number"
                 id="short-break-time"
                 name="shortBreakTime"
-                value={preferences.shortBreakTime}
-                onChange={onChange}
+                value={draftPreferences.shortBreakTime}
+                onChange={handleChange}
               />
             </div>
             <div>
@@ -36,8 +58,8 @@ export default function SettingsModal({ isVisible, preferences, onChange }) {
                 type="number"
                 id="long-break-time"
                 name="longBreakTime"
-                value={preferences.longBreakTime}
-                onChange={onChange}
+                value={draftPreferences.longBreakTime}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -52,8 +74,8 @@ export default function SettingsModal({ isVisible, preferences, onChange }) {
                   id="font-sans"
                   name="font"
                   value="sans"
-                  checked={preferences.font === "sans"}
-                  onChange={onChange}
+                  checked={draftPreferences.font === "sans"}
+                  onChange={handleChange}
                 />
                 <label htmlFor="font-sans" className="font-sans">
                   Aa
@@ -65,8 +87,8 @@ export default function SettingsModal({ isVisible, preferences, onChange }) {
                   id="font-serif"
                   name="font"
                   value="serif"
-                  checked={preferences.font === "serif"}
-                  onChange={onChange}
+                  checked={draftPreferences.font === "serif"}
+                  onChange={handleChange}
                 />
                 <label htmlFor="font-serif" className="font-serif">
                   Aa
@@ -78,8 +100,8 @@ export default function SettingsModal({ isVisible, preferences, onChange }) {
                   id="font-mono"
                   name="font"
                   value="mono"
-                  checked={preferences.font === "mono"}
-                  onChange={onChange}
+                  checked={draftPreferences.font === "mono"}
+                  onChange={handleChange}
                 />
                 <label htmlFor="font-mono" className="font-mono">
                   Aa
@@ -98,8 +120,8 @@ export default function SettingsModal({ isVisible, preferences, onChange }) {
                   id="color-red"
                   name="color"
                   value="red"
-                  checked={preferences.color === "red"}
-                  onChange={onChange}
+                  checked={draftPreferences.color === "red"}
+                  onChange={handleChange}
                 />
                 <label htmlFor="color-red" className="bg-red"></label>
               </div>
@@ -109,8 +131,8 @@ export default function SettingsModal({ isVisible, preferences, onChange }) {
                   id="color-cyan"
                   name="color"
                   value="cyan"
-                  checked={preferences.color === "cyan"}
-                  onChange={onChange}
+                  checked={draftPreferences.color === "cyan"}
+                  onChange={handleChange}
                 />
                 <label htmlFor="color-cyan" className="bg-cyan"></label>
               </div>
@@ -120,8 +142,8 @@ export default function SettingsModal({ isVisible, preferences, onChange }) {
                   id="color-purple"
                   name="color"
                   value="purple"
-                  checked={preferences.color === "purple"}
-                  onChange={onChange}
+                  checked={draftPreferences.color === "purple"}
+                  onChange={handleChange}
                 />
                 <label htmlFor="color-purple" className="bg-purple"></label>
               </div>

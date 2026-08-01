@@ -31,14 +31,8 @@ export default function App() {
     localStorage.setItem("app-preferences", JSON.stringify(preferences));
   }, [preferences]);
 
-  const handlePreferenceChange = (e) => {
-    const { name, value, type } = e.target;
-    const parsedValue = type === "number" ? Number(value) : value;
-
-    setPreferences((prev) => ({
-      ...prev,
-      [name]: parsedValue,
-    }));
+  const handleApplyPreferences = (newPreferences) => {
+    setPreferences(newPreferences);
   };
 
   function setDuration(newIndex) {
@@ -56,8 +50,8 @@ export default function App() {
           <SettingsButton></SettingsButton>
           <SettingsModal
             isVisible={true}
-            preferences={preferences}
-            onChange={handlePreferenceChange}
+            currentPreferences={preferences}
+            onApply={handleApplyPreferences}
           ></SettingsModal>
         </section>
       </main>
