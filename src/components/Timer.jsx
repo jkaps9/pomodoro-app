@@ -21,6 +21,11 @@ export default function Timer({ initialTime }) {
     return () => clearInterval(intervalId);
   }, [isRunning]);
 
+  function resetTimer() {
+    setTime(initialTime);
+    setIsRunning(false);
+  }
+
   return (
     <div id="timer">
       <div className="timer__content">
@@ -35,7 +40,12 @@ export default function Timer({ initialTime }) {
             {(remainingTime % 60).toString().padStart(2, "0")}
           </span>
         </p>
-        <button onClick={() => setIsRunning((prev) => !prev)}>
+        <button
+          onClick={() => {
+            if (remainingTime === 0 && !isRunning) resetTimer();
+            else setIsRunning((prev) => !prev);
+          }}
+        >
           {remainingTime === 0 ? "RESTART" : isRunning ? "PAUSE" : "START"}
         </button>
       </div>
