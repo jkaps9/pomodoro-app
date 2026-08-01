@@ -1,10 +1,26 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      const getThemePreference = () => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
+        } else {
+          localStorage.setItem("theme", "red");
+          return "red";
+        }
+      };
+
+      const themePreference = getThemePreference();
+      document.documentElement.setAttribute("data-theme", themePreference);
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pomodoro-app</title>
+    <title>Pomodoro</title>
   </head>
   <body>
     <div id="root"></div>

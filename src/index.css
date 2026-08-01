@@ -73,6 +73,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root[data-theme="red"] {
+  --color-accent: var(--colors-red-400);
+}
+
+:root[data-theme="cyan"] {
+  --color-accent: var(--colors-cyan-300);
+}
+
+:root[data-theme="purple"] {
+  --color-accent: var(--colors-purple-400);
+}
+
 body {
   color: var(--color-body-text);
   font-family: var(--font-sans);
