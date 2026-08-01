@@ -38,22 +38,24 @@ form {
     justify-content: center;
   }
 
-  .option > label {
-    align-items: center;
-    border-radius: 100vh;
-    cursor: pointer;
-    display: inline-flex;
-    height: 2.5rem;
-    justify-content: center;
-    width: 2.5rem;
-  }
+  .option {
+    label {
+      align-items: center;
+      border-radius: 100vh;
+      cursor: pointer;
+      display: inline-flex;
+      height: 2.5rem;
+      justify-content: center;
+      width: 2.5rem;
+    }
+    label[class^="font-"] {
+      background-color: var(--color-blue-50);
+    }
 
-  .option > label[class^="font-"] {
-    background-color: var(--color-blue-50);
-  }
-
-  .option > label[class^="font-"] {
-    background-color: var(--color-blue-50);
+    input[type="radio"]:checked + label[class^="font-"] {
+      background-color: var(--color-bg-surface);
+      color: var(--color-white);
+    }
   }
 
   .bg-red {

@@ -44,9 +44,6 @@ export default function SettingsModal({ isVisible, preferences }) {
             <legend className="section__title">Font</legend>
             <div className="options">
               <div className="option">
-                <label htmlFor="font-sans" className="font-sans">
-                  Aa
-                </label>
                 <input
                   type="radio"
                   id="font-sans"
@@ -54,11 +51,11 @@ export default function SettingsModal({ isVisible, preferences }) {
                   value="sans"
                   checked={preferences.font === "sans"}
                 />
-              </div>
-              <div className="option">
-                <label htmlFor="font-serif" className="font-serif">
+                <label htmlFor="font-sans" className="font-sans">
                   Aa
                 </label>
+              </div>
+              <div className="option">
                 <input
                   type="radio"
                   id="font-serif"
@@ -66,11 +63,11 @@ export default function SettingsModal({ isVisible, preferences }) {
                   value="serif"
                   checked={preferences.font === "serif"}
                 />
-              </div>
-              <div className="option">
-                <label htmlFor="font-mono" className="font-mono">
+                <label htmlFor="font-serif" className="font-serif">
                   Aa
                 </label>
+              </div>
+              <div className="option">
                 <input
                   type="radio"
                   id="font-mono"
@@ -78,6 +75,9 @@ export default function SettingsModal({ isVisible, preferences }) {
                   value="mono"
                   checked={preferences.font === "mono"}
                 />
+                <label htmlFor="font-mono" className="font-mono">
+                  Aa
+                </label>
               </div>
             </div>
           </fieldset>
@@ -87,7 +87,6 @@ export default function SettingsModal({ isVisible, preferences }) {
             <legend className="section__title">Color</legend>
             <div className="options">
               <div className="option">
-                <label htmlFor="color-red" className="bg-red"></label>
                 <input
                   type="radio"
                   id="color-red"
@@ -95,9 +94,9 @@ export default function SettingsModal({ isVisible, preferences }) {
                   value="red"
                   checked={preferences.color === "red"}
                 />
+                <label htmlFor="color-red" className="bg-red"></label>
               </div>
               <div className="option">
-                <label htmlFor="color-cyan" className="bg-cyan"></label>
                 <input
                   type="radio"
                   id="color-cyan"
@@ -105,9 +104,9 @@ export default function SettingsModal({ isVisible, preferences }) {
                   value="cyan"
                   checked={preferences.color === "cyan"}
                 />
+                <label htmlFor="color-cyan" className="bg-cyan"></label>
               </div>
               <div className="option">
-                <label htmlFor="color-purple" className="bg-purple"></label>
                 <input
                   type="radio"
                   id="color-purple"
@@ -115,6 +114,7 @@ export default function SettingsModal({ isVisible, preferences }) {
                   value="purple"
                   checked={preferences.color === "purple"}
                 />
+                <label htmlFor="color-purple" className="bg-purple"></label>
               </div>
             </div>
           </fieldset>
