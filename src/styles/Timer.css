@@ -28,14 +28,15 @@
   flex-direction: column;
   position: relative;
   z-index: 3;
-  p {
-    font-size: clamp(5rem, 4.5599rem + 1.8779vw, 6.25rem);
-    line-height: 1.25;
-    letter-spacing: -5px;
-    max-width: 50%;
-  }
 
   button {
     letter-spacing: 15px;
   }
+}
+
+.time {
+  font-size: clamp(5rem, 4.5599rem + 1.8779vw, 6.25rem);
+  line-height: 1.25;
+  letter-spacing: -5px;
+  max-width: 50%;
 }
