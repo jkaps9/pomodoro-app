@@ -7,10 +7,16 @@ export default function SettingsModal({
   onApply,
 }) {
   const [draftPreferences, setDraftPreferences] = useState(currentPreferences);
+  const [errors, setErrors] = useState({
+    pomodoroTime: "",
+    shortBreakTime: "",
+    longBreakTime: "",
+  });
 
   const handleChange = (e) => {
     const { name, value, type } = e.target;
-    const parsedValue = type === "number" ? Number(value) : value;
+    const parsedValue =
+      type === "number" ? (value === "" ? "" : Number(value)) : value;
 
     setDraftPreferences((prev) => ({
       ...prev,
@@ -18,9 +24,36 @@ export default function SettingsModal({
     }));
   };
 
+  const validateForm = () => {
+    let isValid = true;
+    const newErrors = {
+      pomodoroTime: "",
+      shortBreakTime: "",
+      longBreakTime: "",
+    };
+
+    if (draftPreferences.pomodoroTime === "") {
+      newErrors.pomodoroTime = "Time cannot be blank";
+      isValid = false;
+    }
+
+    if (draftPreferences.shortBreakTime === "") {
+      newErrors.shortBreakTime = "Time cannot be blank";
+      isValid = false;
+    }
+
+    if (draftPreferences.longBreakTime === "") {
+      newErrors.longBreakTime = "Time cannot be blank";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    onApply(draftPreferences);
+    if (validateForm()) onApply(draftPreferences);
   };
 
   return (
@@ -41,6 +74,9 @@ export default function SettingsModal({
                 value={draftPreferences.pomodoroTime}
                 onChange={handleChange}
               />
+              {errors.pomodoroTime && (
+                <p className="error-message">{errors.pomodoroTime}</p>
+              )}
             </div>
             <div>
               <label htmlFor="short-break-time">Short break</label>
@@ -51,6 +87,9 @@ export default function SettingsModal({
                 value={draftPreferences.shortBreakTime}
                 onChange={handleChange}
               />
+              {errors.shortBreakTime && (
+                <p className="error-message">{errors.shortBreakTime}</p>
+              )}
             </div>
             <div>
               <label htmlFor="long-break-time">Long break</label>
@@ -61,6 +100,9 @@ export default function SettingsModal({
                 value={draftPreferences.longBreakTime}
                 onChange={handleChange}
               />
+              {errors.longBreakTime && (
+                <p className="error-message">{errors.longBreakTime}</p>
+              )}
             </div>
           </div>
         </section>
