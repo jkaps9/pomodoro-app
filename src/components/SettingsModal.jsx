@@ -6,6 +6,7 @@ export default function SettingsModal({
   isVisible,
   currentPreferences,
   onApply,
+  onCloseClick,
 }) {
   const [draftPreferences, setDraftPreferences] = useState(currentPreferences);
   const [errors, setErrors] = useState({
@@ -197,7 +198,7 @@ export default function SettingsModal({
               </div>
             </fieldset>
           </section>
-          <button type="submit" className="btn">
+          <button type="submit" className="btn" onClick={onCloseClick}>
             Apply
           </button>
         </main>

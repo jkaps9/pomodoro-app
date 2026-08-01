@@ -21,6 +21,7 @@ export default function App() {
   });
 
   const [currentTimer, setCurrentTimer] = useState("pomodoroTime");
+  const [isSettingsModalVisible, setIsSettingsModalVisible] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", preferences.color);
@@ -37,6 +38,10 @@ export default function App() {
     setCurrentTimer(newIndex);
   }
 
+  function toggleSettingsModalVisibility() {
+    setIsSettingsModalVisible((prev) => !prev);
+  }
+
   return (
     <>
       <Header onClick={setTimer}></Header>
@@ -48,11 +53,14 @@ export default function App() {
           ></Timer>
         </section>
         <section>
-          <SettingsButton></SettingsButton>
+          <SettingsButton
+            onClick={toggleSettingsModalVisibility}
+          ></SettingsButton>
           <SettingsModal
-            isVisible={true}
+            isVisible={isSettingsModalVisible}
             currentPreferences={preferences}
             onApply={handleApplyPreferences}
+            onCloseClick={toggleSettingsModalVisibility}
           ></SettingsModal>
         </section>
       </main>
