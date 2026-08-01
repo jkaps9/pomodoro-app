@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "../styles/Timer.css";
 
 export default function Timer({ initialTime }) {
   const [remainingTime, setTime] = useState(initialTime);
@@ -21,21 +22,23 @@ export default function Timer({ initialTime }) {
   }, [isRunning]);
 
   return (
-    <div>
-      <p className="time">
-        <span id="minutes">
-          {Math.floor(remainingTime / 60)
-            .toString()
-            .padStart(2, "0")}
-        </span>
-        :
-        <span id="seconds">
-          {(remainingTime % 60).toString().padStart(2, "0")}
-        </span>
-      </p>
-      <button onClick={() => setIsRunning((prev) => !prev)}>
-        {remainingTime === 0 ? "RESTART" : isRunning ? "PAUSE" : "START"}
-      </button>
+    <div id="timer">
+      <div className="timer__content">
+        <p className="time">
+          <span id="minutes">
+            {Math.floor(remainingTime / 60)
+              .toString()
+              .padStart(2, "0")}
+          </span>
+          :
+          <span id="seconds">
+            {(remainingTime % 60).toString().padStart(2, "0")}
+          </span>
+        </p>
+        <button onClick={() => setIsRunning((prev) => !prev)}>
+          {remainingTime === 0 ? "RESTART" : isRunning ? "PAUSE" : "START"}
+        </button>
+      </div>
     </div>
   );
 }

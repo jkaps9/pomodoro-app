@@ -1,0 +1,24 @@
+#timer {
+  align-items: center;
+  border-radius: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.timer__content {
+  align-items: stretch;
+  border-radius: 150px;
+  display: flex;
+  flex-direction: column;
+  p {
+    font-size: clamp(5rem, 4.5599rem + 1.8779vw, 6.25rem);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -5px;
+  }
+
+  button {
+    font-weight: 700;
+    letter-spacing: 15px;
+  }
+}
