@@ -59,8 +59,6 @@
   --color-bg-surface: var(--colors-blue-900);
   --color-accent: var(--colors-red-400);
 
-  --color-border: #e5e4e7;
-
   --font-sans: "Kumbh Sans", system-ui, "Segoe UI", Roboto, sans-serif;
   --font-serif: "Roboto Slab", serif;
   --font-mono: "Space Mono", ui-monospace, Consolas, monospace;
