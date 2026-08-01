@@ -1,5 +1,6 @@
 .settings-modal {
   background-color: var(--color-white);
+  border-radius: 15px;
   color: var(--color-blue-900);
   display: flex;
 }
@@ -12,6 +13,13 @@ form {
     display: flex;
   }
 
+  h3 {
+    font-size: 11px;
+    line-height: normal;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+
   label,
   input {
     font-family: inherit;
@@ -20,6 +28,7 @@ form {
 
   label {
     color: var(--color-text-dark);
+    font-size: 0.75rem;
     text-transform: lowercase;
     opacity: 0.4;
   }
@@ -35,7 +44,7 @@ form {
     flex-direction: column;
 
     * {
-      align-items: flex-start;
+      align-items: center;
       display: flex;
       justify-content: space-between;
     }
@@ -56,6 +65,7 @@ form {
       flex-direction: row;
 
       * {
+        align-items: flex-start;
         flex-direction: column;
       }
     }
