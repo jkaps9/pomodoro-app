@@ -1,11 +1,17 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Timer from "./components/Timer";
 import "./App.css";
 
 export default function App() {
   return (
     <>
       <Header></Header>
+      <main>
+        <section>
+          <Timer></Timer>
+        </section>
+      </main>
       <Footer></Footer>
     </>
   );
