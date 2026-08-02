@@ -42,8 +42,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/jkaps9/pomodoro-app](https://github.com/jkaps9/pomodoro-app)
+- Live Site URL: [https://jkaps9.github.io/pomodoro-app/](https://jkaps9.github.io/pomodoro-app/)
 
 ## My process
 
