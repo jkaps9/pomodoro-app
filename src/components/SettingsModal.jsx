@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "../styles/SettingsModal.css";
 import iconClose from "/icon-close.svg";
 
 export default function SettingsModal({ currentPreferences, onApply }) {
+  const dialogRef = useRef(null);
   const [draftPreferences, setDraftPreferences] = useState(currentPreferences);
   const [errors, setErrors] = useState({
     pomodoroTime: "",
@@ -52,12 +53,14 @@ export default function SettingsModal({ currentPreferences, onApply }) {
     e.preventDefault();
     if (validateForm()) {
       onApply(draftPreferences);
-      // onCloseClick();
+      if (dialogRef.current) {
+        dialogRef.current.close();
+      }
     }
   };
 
   return (
-    <dialog id="settings-modal" className={`settings-modal`}>
+    <dialog ref={dialogRef} id="settings-modal" className={`settings-modal`}>
       <form onSubmit={handleSubmit}>
         <header>
           <h2>Settings</h2>
