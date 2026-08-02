@@ -4,11 +4,9 @@ import "../styles/Header.css";
 
 export default function Header({ onClick }) {
   return (
-    <>
-      <header id="header">
-        <img src={Logo} alt="Pomodoro site logo" className="logo" />
-        <NavBar onClick={onClick}></NavBar>
-      </header>
-    </>
+    <header id="header">
+      <img src={Logo} alt="Pomodoro App" className="logo" />
+      <NavBar onClick={onClick}></NavBar>
+    </header>
   );
 }
