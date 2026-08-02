@@ -1,7 +1,7 @@
 import SettingsIcon from "/icon-settings.svg";
 import "../styles/SettingsButton.css";
 
-export default function SettingsButton({ onClick }) {
+export default function SettingsButton() {
   return (
     <div>
       <button

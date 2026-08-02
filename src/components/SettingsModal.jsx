@@ -2,12 +2,7 @@ import { useState } from "react";
 import "../styles/SettingsModal.css";
 import iconClose from "/icon-close.svg";
 
-export default function SettingsModal({
-  isVisible,
-  currentPreferences,
-  onApply,
-  onCloseClick,
-}) {
+export default function SettingsModal({ currentPreferences, onApply }) {
   const [draftPreferences, setDraftPreferences] = useState(currentPreferences);
   const [errors, setErrors] = useState({
     pomodoroTime: "",
@@ -62,14 +57,11 @@ export default function SettingsModal({
   };
 
   return (
-    <dialog
-      id="settings-modal"
-      className={`settings-modal ${isVisible ? "active" : ""}`}
-    >
+    <dialog id="settings-modal" className={`settings-modal`}>
       <form onSubmit={handleSubmit}>
         <header>
           <h2>Settings</h2>
-          <button commandfor="settings-modal" command="close">
+          <button commandfor="settings-modal" command="close" type="button">
             <img src={iconClose} alt="" />
           </button>
         </header>
