@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      const getAppPreference = () => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("app-preferences")
+        ) {
+          return JSON.stringify(localStorage.getItem("app-preferences"));
+        } else {
+          return {
+            pomodoroTime: 25,
+            shortBreakTime: 5,
+            longBreakTime: 15,
+            font: "sans",
+            color: "red",
+          };
+        }
+      };
+
+      const appPreference = getAppPreference();
+      document.documentElement.setAttribute("data-theme", appPreference.color);
+      document.documentElement.setAttribute("data-font", appPreference.font);
+    </script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/pomodoro-app/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro</title>
+    <script type="module" crossorigin src="/pomodoro-app/assets/index-B_dxCpJV.js"></script>
+    <link rel="stylesheet" crossorigin href="/pomodoro-app/assets/index-DIkRJn4g.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
