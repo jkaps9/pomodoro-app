@@ -124,9 +124,15 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                   value={draftPreferences.pomodoroTime}
                   onChange={handleChange}
                   autoFocus
+                  aria-invalid={errors.pomodoroTime ? "true" : "false"}
+                  aria-describedby={
+                    errors.pomodoroTime ? "pomodoro-error" : undefined
+                  }
                 />
                 {errors.pomodoroTime && (
-                  <p className="error-message">{errors.pomodoroTime}</p>
+                  <p id="pomodoro-error" className="error-message">
+                    {errors.pomodoroTime}
+                  </p>
                 )}
               </div>
               <div>
@@ -139,6 +145,10 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                   max={99}
                   value={draftPreferences.shortBreakTime}
                   onChange={handleChange}
+                  aria-invalid={errors.shortBreakTime ? "true" : "false"}
+                  aria-describedby={
+                    errors.shortBreakTime ? "pomodoro-error" : undefined
+                  }
                 />
                 {errors.shortBreakTime && (
                   <p className="error-message">{errors.shortBreakTime}</p>
@@ -154,6 +164,10 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                   max={99}
                   value={draftPreferences.longBreakTime}
                   onChange={handleChange}
+                  aria-invalid={errors.longBreakTime ? "true" : "false"}
+                  aria-describedby={
+                    errors.longBreakTime ? "pomodoro-error" : undefined
+                  }
                 />
                 {errors.longBreakTime && (
                   <p className="error-message">{errors.longBreakTime}</p>
