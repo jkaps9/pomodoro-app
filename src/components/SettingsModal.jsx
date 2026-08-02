@@ -100,8 +100,13 @@ export default function SettingsModal({ currentPreferences, onApply }) {
       <form onSubmit={handleSubmit}>
         <header>
           <h2>Settings</h2>
-          <button commandfor="settings-modal" command="close" type="button">
-            <img src={iconClose} alt="" />
+          <button
+            commandfor="settings-modal"
+            command="close"
+            type="button"
+            aria-label="close settings"
+          >
+            <img src={iconClose} alt="" aria-hidden="true" />
           </button>
         </header>
         <main>
@@ -171,7 +176,8 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                     className="sr-only"
                   />
                   <label htmlFor="font-sans" className="font-sans">
-                    <span>Aa</span>
+                    <span aria-hidden="true">Aa</span>
+                    <span className="sr-only">Sans-serif font</span>
                   </label>
                 </div>
                 <div className="option">
@@ -185,7 +191,8 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                     className="sr-only"
                   />
                   <label htmlFor="font-serif" className="font-serif">
-                    <span>Aa</span>
+                    <span aria-hidden="true">Aa</span>
+                    <span className="sr-only">Serif font</span>
                   </label>
                 </div>
                 <div className="option">
@@ -199,7 +206,8 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                     className="sr-only"
                   />
                   <label htmlFor="font-mono" className="font-mono">
-                    <span>Aa</span>
+                    <span aria-hidden="true">Aa</span>
+                    <span className="sr-only">Monospace font</span>
                   </label>
                 </div>
               </div>
@@ -219,7 +227,9 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                     onChange={handleChange}
                     className="sr-only"
                   />
-                  <label htmlFor="color-red" className="bg-red"></label>
+                  <label htmlFor="color-red" className="bg-red">
+                    <span className="sr-only">Red theme</span>
+                  </label>
                 </div>
                 <div className="option">
                   <input
@@ -231,7 +241,9 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                     onChange={handleChange}
                     className="sr-only"
                   />
-                  <label htmlFor="color-cyan" className="bg-cyan"></label>
+                  <label htmlFor="color-cyan" className="bg-cyan">
+                    <span className="sr-only">Cyan theme</span>
+                  </label>
                 </div>
                 <div className="option">
                   <input
@@ -243,7 +255,9 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                     onChange={handleChange}
                     className="sr-only"
                   />
-                  <label htmlFor="color-purple" className="bg-purple"></label>
+                  <label htmlFor="color-purple" className="bg-purple">
+                    <span className="sr-only">Purple theme</span>
+                  </label>
                 </div>
               </div>
             </fieldset>
