@@ -73,6 +73,7 @@ export default function Timer({ initialTime }) {
           </div>
         )}
         <button
+          id="timer-control"
           onClick={() => {
             if (remainingTime === 0) resetTimer();
             else setIsRunning((prev) => !prev);

@@ -58,3 +58,7 @@
     font-weight: 400;
   }
 }
+
+#timer-control:hover {
+  color: var(--color-accent);
+}
