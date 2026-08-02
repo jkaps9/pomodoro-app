@@ -9,7 +9,7 @@ export default function SettingsButton() {
         command="show-modal"
         commandfor="settings-modal"
       >
-        <img src={SettingsIcon} alt="settings icon" />
+        <img src={SettingsIcon} alt="" aria-hidden="true" />
       </button>
     </div>
   );

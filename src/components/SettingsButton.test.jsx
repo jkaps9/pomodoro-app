@@ -20,12 +20,14 @@ describe("SettingsButton Component", () => {
   });
 
   it("renders the settings icon inside the button", () => {
-    render(<SettingsButton />);
+    const { container } = render(<SettingsButton />);
 
     const button = screen.getByRole("button", { name: /open settings/i });
 
-    const icon = screen.getByRole("img", { name: /settings icon/i });
+    const icon = container.querySelector("img");
+
     expect(icon).toBeInTheDocument();
+    expect(icon).toHaveAttribute("src");
     expect(button).toContainElement(icon);
   });
 });
