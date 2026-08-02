@@ -41,19 +41,19 @@ export default function App() {
     <>
       <Header currentTimer={currentTimer} onClick={setTimer}></Header>
       <main id="main">
-        <section>
+        <div>
           <Timer
-            key={preferences[currentTimer]}
+            key={`${currentTimer}-${preferences[currentTimer]}`}
             initialTime={preferences[currentTimer]}
           ></Timer>
-        </section>
-        <section>
+        </div>
+        <div>
           <SettingsButton></SettingsButton>
           <SettingsModal
             currentPreferences={preferences}
             onApply={handleApplyPreferences}
           ></SettingsModal>
-        </section>
+        </div>
       </main>
     </>
   );
