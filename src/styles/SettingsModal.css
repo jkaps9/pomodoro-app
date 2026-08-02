@@ -1,20 +1,17 @@
 .settings-modal {
-  background-color: var(--color-white);
-  border-radius: 15px;
+  background-color: transparent;
+  border: none;
   color: var(--color-blue-900);
+  margin-inline: auto;
   min-width: clamp(20.625rem, 16.0035rem + 19.7183vw, 33.75rem);
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  padding-block-end: 1.5rem;
+  width: 100%;
   z-index: 5;
 }
 
-.settings-modal:open {
-  display: flex;
-}
-
 form {
+  background-color: var(--color-white);
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   flex: 1;
