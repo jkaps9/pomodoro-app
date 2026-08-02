@@ -3,23 +3,31 @@
   <head>
     <script>
       const getAppPreference = () => {
-        if (
-          typeof localStorage !== "undefined" &&
-          localStorage.getItem("app-preferences")
-        ) {
-          return JSON.stringify(localStorage.getItem("app-preferences"));
-        } else {
-          return {
-            pomodoroTime: 25,
-            shortBreakTime: 5,
-            longBreakTime: 15,
-            font: "sans",
-            color: "red",
-          };
+        const defaultPrefs = {
+          pomodoroTime: 25,
+          shortBreakTime: 5,
+          longBreakTime: 15,
+          font: "sans",
+          color: "red",
+        };
+
+        if (typeof localStorage !== "undefined") {
+          const storedPrefs = localStorage.getItem("app-preferences");
+          if (storedPrefs) {
+            try {
+              const parsedPrefs = JSON.parse(storedPrefs);
+              return { ...defaultPrefs, ...parsedPrefs };
+            } catch (error) {
+              console.warn("Corrupted app-preferences. Reverting to defaults.");
+            }
+          }
         }
+
+        return defaultPrefs;
       };
 
       const appPreference = getAppPreference();
+
       document.documentElement.setAttribute("data-theme", appPreference.color);
       document.documentElement.setAttribute("data-font", appPreference.font);
     </script>
