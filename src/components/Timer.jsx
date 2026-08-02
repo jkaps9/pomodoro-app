@@ -10,9 +10,9 @@ export default function Timer({ initialTime }) {
 
     const intervalId = setInterval(() => {
       setTime((prev) => {
-        if (prev === 0) {
+        if (prev <= 1) {
           setIsRunning(false);
-          return prev;
+          return 0;
         }
         return prev - 1;
       });
@@ -74,7 +74,7 @@ export default function Timer({ initialTime }) {
         )}
         <button
           onClick={() => {
-            if (remainingTime === 0 && !isRunning) resetTimer();
+            if (remainingTime === 0) resetTimer();
             else setIsRunning((prev) => !prev);
           }}
         >
