@@ -31,7 +31,13 @@ export default function Timer({ initialTime }) {
 
   return (
     <div id="timer">
-      <svg id="progress-circle">
+      <svg
+        id="progress-circle"
+        role="progressbar"
+        aria-valuemin="0"
+        aria-valuemax={initialTime * 60}
+        aria-valuenow={remainingTime}
+      >
         <circle
           r="48%"
           cx="50%"
@@ -46,7 +52,7 @@ export default function Timer({ initialTime }) {
         ></circle>
       </svg>
       <div className="timer__content">
-        <p className="time">
+        <p className="time" aria-hidden="true">
           <span id="minutes">
             {Math.floor(remainingTime / 60)
               .toString()
@@ -57,6 +63,15 @@ export default function Timer({ initialTime }) {
             {(remainingTime % 60).toString().padStart(2, "0")}
           </span>
         </p>
+        <span className="sr-only">
+          {Math.floor(remainingTime / 60)} minutes and {remainingTime % 60}{" "}
+          seconds remaining
+        </span>
+        {remainingTime === 0 && (
+          <div aria-live="polite" className="sr-only">
+            Time is up!
+          </div>
+        )}
         <button
           onClick={() => {
             if (remainingTime === 0 && !isRunning) resetTimer();
