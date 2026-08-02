@@ -51,15 +51,33 @@ export default function SettingsModal({ currentPreferences, onApply }) {
     if (draftPreferences.pomodoroTime === "") {
       newErrors.pomodoroTime = "Time cannot be blank";
       isValid = false;
+    } else if (
+      draftPreferences.pomodoroTime < 1 ||
+      draftPreferences.pomodoroTime > 99
+    ) {
+      newErrors.pomodoroTime = "Value must be from 1 to 99";
+      isValid = false;
     }
 
     if (draftPreferences.shortBreakTime === "") {
       newErrors.shortBreakTime = "Time cannot be blank";
       isValid = false;
+    } else if (
+      draftPreferences.shortBreakTime < 1 ||
+      draftPreferences.shortBreakTime > 99
+    ) {
+      newErrors.shortBreakTime = "Value must be from 1 to 99";
+      isValid = false;
     }
 
     if (draftPreferences.longBreakTime === "") {
       newErrors.longBreakTime = "Time cannot be blank";
+      isValid = false;
+    } else if (
+      draftPreferences.longBreakTime < 1 ||
+      draftPreferences.longBreakTime > 99
+    ) {
+      newErrors.longBreakTime = "Value must be from 1 to 99";
       isValid = false;
     }
 
@@ -96,6 +114,8 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                   type="number"
                   id="pomodoro-time"
                   name="pomodoroTime"
+                  min={1}
+                  max={99}
                   value={draftPreferences.pomodoroTime}
                   onChange={handleChange}
                   autoFocus
@@ -110,6 +130,8 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                   type="number"
                   id="short-break-time"
                   name="shortBreakTime"
+                  min={1}
+                  max={99}
                   value={draftPreferences.shortBreakTime}
                   onChange={handleChange}
                 />
@@ -123,6 +145,8 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                   type="number"
                   id="long-break-time"
                   name="longBreakTime"
+                  min={1}
+                  max={99}
                   value={draftPreferences.longBreakTime}
                   onChange={handleChange}
                 />
