@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import "../styles/SettingsModal.css";
+import "./SettingsModal.css";
 import iconClose from "../assets/icons/icon-close.svg";
 
 export default function SettingsModal({ currentPreferences, onApply }) {

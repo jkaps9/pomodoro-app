@@ -1,5 +1,5 @@
 import SettingsIcon from "../assets/icons/icon-settings.svg";
-import "../styles/SettingsButton.css";
+import "./SettingsButton.css";
 
 export default function SettingsButton() {
   return (

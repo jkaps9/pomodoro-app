@@ -1,4 +1,4 @@
-import "../styles/Nav.css";
+import "./Nav.css";
 
 export default function NavBar({ currentTimer, onClick }) {
   const tabs = [

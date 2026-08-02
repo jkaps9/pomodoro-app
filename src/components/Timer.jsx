@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "../styles/Timer.css";
+import "./Timer.css";
 
 export default function Timer({ initialTime }) {
   const [remainingTime, setTime] = useState(initialTime * 60);
