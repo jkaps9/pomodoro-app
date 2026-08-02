@@ -147,11 +147,13 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                   onChange={handleChange}
                   aria-invalid={errors.shortBreakTime ? "true" : "false"}
                   aria-describedby={
-                    errors.shortBreakTime ? "pomodoro-error" : undefined
+                    errors.shortBreakTime ? "short-break-error" : undefined
                   }
                 />
                 {errors.shortBreakTime && (
-                  <p className="error-message">{errors.shortBreakTime}</p>
+                  <p id="short-break-error" className="error-message">
+                    {errors.shortBreakTime}
+                  </p>
                 )}
               </div>
               <div>
@@ -166,11 +168,13 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                   onChange={handleChange}
                   aria-invalid={errors.longBreakTime ? "true" : "false"}
                   aria-describedby={
-                    errors.longBreakTime ? "pomodoro-error" : undefined
+                    errors.longBreakTime ? "long-break-error" : undefined
                   }
                 />
                 {errors.longBreakTime && (
-                  <p className="error-message">{errors.longBreakTime}</p>
+                  <p id="long-break-error" className="error-message">
+                    {errors.longBreakTime}
+                  </p>
                 )}
               </div>
             </div>
