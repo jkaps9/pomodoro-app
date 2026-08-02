@@ -16,13 +16,13 @@ export default function Timer({ initialTime }) {
         }
         return prev - 1;
       });
-    }, 10);
+    }, 1000);
 
     return () => clearInterval(intervalId);
   }, [isRunning]);
 
   function resetTimer() {
-    setTime(initialTime);
+    setTime(initialTime * 60);
     setIsRunning(false);
   }
 
