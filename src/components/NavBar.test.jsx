@@ -5,7 +5,8 @@ import NavBar from "./NavBar";
 
 describe("NavBar Component", () => {
   it("renders all three navigation tabs", () => {
-    render(<NavBar onClick={() => {}} />);
+    // Provide the required currentTimer prop
+    render(<NavBar currentTimer="pomodoroTime" onClick={() => {}} />);
 
     expect(
       screen.getByRole("button", { name: /pomodoro/i }),
@@ -18,28 +19,14 @@ describe("NavBar Component", () => {
     ).toBeInTheDocument();
   });
 
-  it("sets the 'pomodoro' tab as active by default", () => {
-    render(<NavBar onClick={() => {}} />);
+  it("sets the correct tab as active based on the currentTimer prop", () => {
+    // Pass in shortBreakTime to verify it strictly respects the prop
+    render(<NavBar currentTimer="shortBreakTime" onClick={() => {}} />);
 
     const pomodoroButton = screen.getByRole("button", { name: /pomodoro/i });
     const shortBreakButton = screen.getByRole("button", {
       name: /short break/i,
     });
-
-    expect(pomodoroButton).toHaveAttribute("aria-current", "true");
-    expect(shortBreakButton).not.toHaveAttribute("aria-current");
-  });
-
-  it("updates the active state when a new tab is clicked", async () => {
-    const user = userEvent.setup();
-    render(<NavBar onClick={() => {}} />);
-
-    const pomodoroButton = screen.getByRole("button", { name: /pomodoro/i });
-    const shortBreakButton = screen.getByRole("button", {
-      name: /short break/i,
-    });
-
-    await user.click(shortBreakButton);
 
     expect(shortBreakButton).toHaveAttribute("aria-current", "true");
     expect(pomodoroButton).not.toHaveAttribute("aria-current");
@@ -49,12 +36,13 @@ describe("NavBar Component", () => {
     const user = userEvent.setup();
     const mockOnClick = vi.fn();
 
-    render(<NavBar onClick={mockOnClick} />);
+    render(<NavBar currentTimer="pomodoroTime" onClick={mockOnClick} />);
 
     const longBreakButton = screen.getByRole("button", { name: /long break/i });
 
     await user.click(longBreakButton);
 
+    // Verify it notifies the parent to handle the state change
     expect(mockOnClick).toHaveBeenCalledTimes(1);
     expect(mockOnClick).toHaveBeenCalledWith("longBreakTime");
   });
