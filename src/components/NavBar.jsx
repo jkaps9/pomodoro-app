@@ -1,14 +1,6 @@
-import { useState } from "react";
 import "../styles/Nav.css";
 
-export default function NavBar({ onClick }) {
-  const [activeIndex, setActiveIndex] = useState("pomodoroTime");
-
-  function setIndex(newIndex) {
-    onClick(newIndex);
-    setActiveIndex(newIndex);
-  }
-
+export default function NavBar({ currentTimer, onClick }) {
   const tabs = [
     { id: "pomodoroTime", displayName: "pomodoro" },
     { id: "shortBreakTime", displayName: "short break" },
@@ -20,9 +12,9 @@ export default function NavBar({ onClick }) {
         {tabs.map((tab) => (
           <li key={tab.id}>
             <button
-              onClick={() => setIndex(tab.id)}
+              onClick={() => onClick(tab.id)}
               className="btn"
-              aria-current={tab.id === activeIndex ? "true" : undefined}
+              aria-current={tab.id === currentTimer ? "true" : undefined}
             >
               {tab.displayName}
             </button>

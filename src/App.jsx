@@ -39,7 +39,7 @@ export default function App() {
 
   return (
     <>
-      <Header onClick={setTimer}></Header>
+      <Header currentTimer={currentTimer} onClick={setTimer}></Header>
       <main id="main">
         <section>
           <Timer
