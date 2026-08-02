@@ -18,9 +18,8 @@ export default function NavBar({ onClick }) {
     <div className="nav-bar">
       <ul className="tab-list">
         {tabs.map((tab) => (
-          <li>
+          <li key={tab.id}>
             <button
-              key={tab.id}
               onClick={() => setIndex(tab.id)}
               className={`btn ${tab.id === activeIndex ? "active" : ""}`}
             >

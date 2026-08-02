@@ -9,6 +9,7 @@ describe("SettingsButton Component", () => {
     const button = screen.getByRole("button", { name: /open settings/i });
     expect(button).toBeInTheDocument();
   });
+
   it("applies the correct custom command attributes", () => {
     render(<SettingsButton />);
 
