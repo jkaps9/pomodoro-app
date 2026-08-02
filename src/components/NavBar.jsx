@@ -21,6 +21,7 @@ export default function NavBar({ onClick }) {
           <li key={tab.id}>
             <button
               onClick={() => setIndex(tab.id)}
+              className="btn"
               aria-current={tab.id === activeIndex ? "true" : undefined}
             >
               {tab.displayName}
