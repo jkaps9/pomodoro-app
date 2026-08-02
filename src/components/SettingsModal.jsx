@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "../styles/SettingsModal.css";
-import iconClose from "/icon-close.svg";
+import iconClose from "../assets/icons/icon-close.svg";
 
 export default function SettingsModal({ currentPreferences, onApply }) {
   const dialogRef = useRef(null);

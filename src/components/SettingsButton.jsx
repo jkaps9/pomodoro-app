@@ -1,4 +1,4 @@
-import SettingsIcon from "/icon-settings.svg";
+import SettingsIcon from "../assets/icons/icon-settings.svg";
 import "../styles/SettingsButton.css";
 
 export default function SettingsButton() {
