@@ -44,7 +44,7 @@ export default function Timer({ initialTime }) {
           cy="50%"
           fill="transparent"
           stroke="currentColor"
-          stroke-width="0.5rem"
+          strokeWidth="0.5rem"
           pathLength="100"
           strokeDasharray={`${100 - completionPercentage}, 
           ${completionPercentage}`}
