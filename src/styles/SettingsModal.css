@@ -3,9 +3,10 @@
   border: none;
   color: var(--color-blue-900);
   margin-inline: auto;
+  max-width: 540px;
   min-width: clamp(20.625rem, 16.0035rem + 19.7183vw, 33.75rem);
   padding-block-end: 1.5rem;
-  width: 100%;
+  width: fit-content;
   z-index: 5;
 }
 
