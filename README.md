@@ -28,7 +28,17 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+#### Mobile
+
+<img src="./screenshot-mobile.png" width="250">
+
+#### Desktop
+
+![](./screenshot-desktop.png)
+
+#### Settings
+
+![](./screenshot-settings.png)
 
 ### Links
 
