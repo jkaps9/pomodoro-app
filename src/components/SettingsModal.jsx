@@ -97,7 +97,7 @@ export default function SettingsModal({ currentPreferences, onApply }) {
 
   return (
     <dialog ref={dialogRef} id="settings-modal" className={`settings-modal`}>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} noValidate>
         <header>
           <h2>Settings</h2>
           <button
