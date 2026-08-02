@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import "../styles/SettingsModal.css";
 import iconClose from "/icon-close.svg";
 
@@ -10,6 +10,24 @@ export default function SettingsModal({ currentPreferences, onApply }) {
     shortBreakTime: "",
     longBreakTime: "",
   });
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
+    const handleClose = () => {
+      setDraftPreferences(currentPreferences);
+      setErrors({
+        pomodoroTime: "",
+        shortBreakTime: "",
+        longBreakTime: "",
+      });
+    };
+
+    dialog.addEventListener("close", handleClose);
+
+    return () => dialog.removeEventListener("close", handleClose);
+  }, [currentPreferences]);
 
   const handleChange = (e) => {
     const { name, value, type } = e.target;
