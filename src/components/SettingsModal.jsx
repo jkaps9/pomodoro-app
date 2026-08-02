@@ -77,6 +77,7 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                   name="pomodoroTime"
                   value={draftPreferences.pomodoroTime}
                   onChange={handleChange}
+                  autoFocus
                 />
                 {errors.pomodoroTime && (
                   <p className="error-message">{errors.pomodoroTime}</p>
@@ -122,9 +123,10 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                     value="sans"
                     checked={draftPreferences.font === "sans"}
                     onChange={handleChange}
+                    className="sr-only"
                   />
                   <label htmlFor="font-sans" className="font-sans">
-                    Aa
+                    <span>Aa</span>
                   </label>
                 </div>
                 <div className="option">
@@ -135,9 +137,10 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                     value="serif"
                     checked={draftPreferences.font === "serif"}
                     onChange={handleChange}
+                    className="sr-only"
                   />
                   <label htmlFor="font-serif" className="font-serif">
-                    Aa
+                    <span>Aa</span>
                   </label>
                 </div>
                 <div className="option">
@@ -148,9 +151,10 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                     value="mono"
                     checked={draftPreferences.font === "mono"}
                     onChange={handleChange}
+                    className="sr-only"
                   />
                   <label htmlFor="font-mono" className="font-mono">
-                    Aa
+                    <span>Aa</span>
                   </label>
                 </div>
               </div>
@@ -168,6 +172,7 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                     value="red"
                     checked={draftPreferences.color === "red"}
                     onChange={handleChange}
+                    className="sr-only"
                   />
                   <label htmlFor="color-red" className="bg-red"></label>
                 </div>
@@ -179,6 +184,7 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                     value="cyan"
                     checked={draftPreferences.color === "cyan"}
                     onChange={handleChange}
+                    className="sr-only"
                   />
                   <label htmlFor="color-cyan" className="bg-cyan"></label>
                 </div>
@@ -190,6 +196,7 @@ export default function SettingsModal({ currentPreferences, onApply }) {
                     value="purple"
                     checked={draftPreferences.color === "purple"}
                     onChange={handleChange}
+                    className="sr-only"
                   />
                   <label htmlFor="color-purple" className="bg-purple"></label>
                 </div>

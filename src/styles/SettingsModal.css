@@ -71,13 +71,6 @@ form {
     }
   }
 
-  .option-group input[type="radio"] {
-    opacity: 0;
-    position: absolute;
-    width: 0;
-    height: 0;
-  }
-
   .options {
     align-items: center;
     display: flex;
@@ -88,39 +81,70 @@ form {
   .option {
     label {
       align-items: center;
-      border-radius: 100vh;
+      border: 1px solid transparent;
+      border-radius: 50%;
       cursor: pointer;
       display: inline-flex;
-      height: 2.5rem;
+      height: 3.125rem;
       justify-content: center;
       position: relative;
-      width: 2.5rem;
+      width: 3.125rem;
+      padding: 5px;
+
+      span {
+        position: relative;
+        z-index: 10;
+      }
     }
-    label[class^="font-"] {
+
+    label[class^="font-"]::before {
       background-color: var(--color-blue-50);
     }
 
-    input[type="radio"]:checked + label[class^="font-"] {
-      background-color: var(--color-bg-surface);
+    label::before {
+      border-radius: 50%;
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 80%;
+      width: 80%;
+      z-index: 1;
+    }
+
+    input[type="radio"]:checked + label[class^="font-"] > span {
       color: var(--color-white);
     }
 
-    input[type="radio"]:checked + label[class^="bg-"] {
+    input[type="radio"]:checked + label[class^="font-"]::before {
+      background-color: var(--color-bg-surface);
+    }
+
+    input[type="radio"]:checked + label[class^="bg-"]::after {
+      content: "";
       background-image: url("/checkmark.svg");
       background-repeat: no-repeat;
       background-position: center;
+      height: 80%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      z-index: 10;
     }
   }
 
-  .bg-red {
+  .bg-red::before {
     background-color: var(--color-red-400);
   }
 
-  .bg-cyan {
+  .bg-cyan::before {
     background-color: var(--color-cyan-300);
   }
 
-  .bg-purple {
+  .bg-purple::before {
     background-color: var(--color-purple-400);
   }
 
@@ -182,6 +206,15 @@ form {
     transform: translateY(calc(1rem + 50%));
     width: fit-content;
   }
+}
+
+input:focus-visible {
+  outline: 2px solid var(--color-bg-surface);
+}
+
+input[type="radio"]:hover + label,
+input[type="radio"]:focus-visible + label {
+  border-color: var(--color-blue-50);
 }
 
 .error-message {
