@@ -57,16 +57,19 @@ export default function SettingsModal({
     e.preventDefault();
     if (validateForm()) {
       onApply(draftPreferences);
-      onCloseClick();
+      // onCloseClick();
     }
   };
 
   return (
-    <div className={`settings-modal ${isVisible ? "active" : ""}`}>
+    <dialog
+      id="settings-modal"
+      className={`settings-modal ${isVisible ? "active" : ""}`}
+    >
       <form onSubmit={handleSubmit}>
         <header>
           <h2>Settings</h2>
-          <button onClick={onCloseClick}>
+          <button commandfor="settings-modal" command="close">
             <img src={iconClose} alt="" />
           </button>
         </header>
@@ -206,6 +209,6 @@ export default function SettingsModal({
           </button>
         </main>
       </form>
-    </div>
+    </dialog>
   );
 }
