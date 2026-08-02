@@ -30,7 +30,7 @@ li {
   width: 100%;
 }
 
-.btn.active {
+.btn[aria-current="true"] {
   background-color: var(--color-accent);
   color: var(--color-text-dark);
   opacity: 1;

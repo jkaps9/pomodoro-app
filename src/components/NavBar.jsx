@@ -15,19 +15,19 @@ export default function NavBar({ onClick }) {
     { id: "longBreakTime", displayName: "long break" },
   ];
   return (
-    <div className="nav-bar">
+    <nav aria-label="Timer modes" className="nav-bar">
       <ul className="tab-list">
         {tabs.map((tab) => (
           <li key={tab.id}>
             <button
               onClick={() => setIndex(tab.id)}
-              className={`btn ${tab.id === activeIndex ? "active" : ""}`}
+              aria-current={tab.id === activeIndex ? "true" : undefined}
             >
               {tab.displayName}
             </button>
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   );
 }

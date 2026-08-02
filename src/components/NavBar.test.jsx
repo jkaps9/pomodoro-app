@@ -26,11 +26,11 @@ describe("NavBar Component", () => {
       name: /short break/i,
     });
 
-    expect(pomodoroButton).toHaveClass("active");
-    expect(shortBreakButton).not.toHaveClass("active");
+    expect(pomodoroButton).toHaveAttribute("aria-current", "true");
+    expect(shortBreakButton).not.toHaveAttribute("aria-current");
   });
 
-  it("updates the active class when a new tab is clicked", async () => {
+  it("updates the active state when a new tab is clicked", async () => {
     const user = userEvent.setup();
     render(<NavBar onClick={() => {}} />);
 
@@ -41,8 +41,8 @@ describe("NavBar Component", () => {
 
     await user.click(shortBreakButton);
 
-    expect(shortBreakButton).toHaveClass("active");
-    expect(pomodoroButton).not.toHaveClass("active");
+    expect(shortBreakButton).toHaveAttribute("aria-current", "true");
+    expect(pomodoroButton).not.toHaveAttribute("aria-current");
   });
 
   it("calls the onClick prop with the correct tab ID when clicked", async () => {
