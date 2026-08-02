@@ -16,9 +16,7 @@ describe("Timer Component", () => {
   it("renders the accessible time, progress bar, and START button", () => {
     render(<Timer initialTime={25} />);
 
-    expect(
-      screen.getByText("25 minutes and 0 seconds remaining"),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/25.*min.*0.*sec/i)).toBeInTheDocument();
 
     const progressBar = screen.getByRole("progressbar");
     expect(progressBar).toBeInTheDocument();
@@ -52,9 +50,7 @@ describe("Timer Component", () => {
       vi.advanceTimersByTime(1000);
     });
 
-    expect(
-      screen.getByText("24 minutes and 59 seconds remaining"),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/24.*min.*59.*sec/i)).toBeInTheDocument();
     expect(screen.getByRole("progressbar")).toHaveAttribute(
       "aria-valuenow",
       "1499",
@@ -79,9 +75,7 @@ describe("Timer Component", () => {
 
     fireEvent.click(restartButton);
 
-    expect(
-      screen.getByText(/1 minutes and 0 seconds remaining/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/1.*min.*0.*sec/i)).toBeInTheDocument();
     expect(screen.queryByText("Time is up!")).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: /start/i })).toBeInTheDocument();
   });

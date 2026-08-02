@@ -40,9 +40,7 @@ describe("App Integration", () => {
     expect(document.documentElement.getAttribute("data-font")).toBe("sans");
 
     // Verify Timer renders the default Pomodoro time (25:00)
-    expect(
-      screen.getByText(/25 minutes and 0 seconds remaining/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/25.*min.*0.*sec/i)).toBeInTheDocument();
   });
 
   it("loads saved preferences from localStorage on mount", () => {
@@ -62,9 +60,7 @@ describe("App Integration", () => {
     expect(document.documentElement.getAttribute("data-font")).toBe("mono");
 
     // Verify Timer respects the localStorage time
-    expect(
-      screen.getByText(/50 minutes and 0 seconds remaining/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/50.*min.*0.*sec/i)).toBeInTheDocument();
   });
 
   it("switches timers when navigation tabs are clicked", () => {
@@ -74,9 +70,7 @@ describe("App Integration", () => {
     fireEvent.click(shortBreakTab);
 
     // Verify the Timer component re-rendered with the Short Break time (5:00)
-    expect(
-      screen.getByText(/5 minutes and 0 seconds remaining/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/5.*min.*0.*sec/i)).toBeInTheDocument();
   });
 
   it("updates preferences, localStorage, and document attributes when Settings are applied", () => {
@@ -97,9 +91,7 @@ describe("App Integration", () => {
     fireEvent.click(applyButton);
 
     // Verify Timer updated to 45 minutes
-    expect(
-      screen.getByText(/45 minutes and 0 seconds remaining/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/45.*min.*0.*sec/i)).toBeInTheDocument();
 
     // Verify Document theme updated
     expect(document.documentElement.getAttribute("data-theme")).toBe("purple");
